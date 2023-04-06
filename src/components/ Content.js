@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css'
 import { useState } from 'react'
 
 const  Content = () => {
@@ -18,15 +19,30 @@ const  Content = () => {
         item: "Flouer"
     }])
 
+    
+    const handleCheck = (id) => {
+        const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
+        setItems(listItems);
+    }
+    
+
 
     return (
         <div>
-
-        <ul>
-            {items.map((item) => (
-                <li>{item.item}</li>
-            ))}
-        </ul>
+            <ul className='ul'>
+                {items.map((item) => (
+                    <li 
+                        key={item.id}>
+                            <input
+                                type="checkbox"
+                                onChange={() => handleCheck(item.id)}
+                                checked={item.checked}
+                            />
+                        <label>{item.item}</label>
+            
+                    </li>
+                ))}
+            </ul>
         </div>
 
   )
