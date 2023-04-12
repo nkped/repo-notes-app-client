@@ -21,14 +21,20 @@ function App() {
     item: "Flouer"
 }])
 
+
+//localstorage implemented but not checked
 const handleCheck = (id) => {
   const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item );
   setItems(listItems);
+  localStorage.setItem('shoppinglist', JSON.stringify(listItems))
 }
 
 const handleDelete = (id) => {
   const listItems = items.filter((item) => item.id !== id )
-  setItems(listItems);        
+  setItems(listItems);
+  localStorage.setItem('shoppinglist', JSON.stringify(listItems))
+  //console.log(listItems)
+  console.log(localStorage.shoppinglist)
 }
 
 
