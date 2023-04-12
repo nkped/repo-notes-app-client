@@ -36,8 +36,7 @@ const handleDelete = (id) => {
     <div className="App">
       <Header />      
       <Content 
-        items={items} 
-        setItems={setItems}
+        items={items}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
          />
