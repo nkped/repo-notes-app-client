@@ -32,16 +32,16 @@ const handleDelete = (id) => {
 }
 
 
-  return (
-    <div className="App">
-      <Header />      
-      <Content 
-        items={items}
-        handleCheck={handleCheck}
-        handleDelete={handleDelete}
-         />
-    </div>
-  );
+return (
+  <div className="App">
+    <Header />      
+    <Content 
+      items={items}
+      handleCheck={handleCheck}
+      handleDelete={handleDelete}
+        />
+  </div>
+);
 }
 
 export default App;
