@@ -18,7 +18,7 @@ body {
   /*text-align: center;*/
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh; 
   width: 100%; 
@@ -26,10 +26,6 @@ body {
   border: 1px solid mediumblue;
   margin: auto;
   
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 

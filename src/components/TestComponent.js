@@ -28,7 +28,7 @@ const oneThing = {
 
 const color = "red"
 
-export function TestComponent(color) {
+function TestComponent(color) {
     console.log(color)
   return (
 

@@ -1,50 +1,36 @@
 import React from 'react'
 import '../App.css'
-import { useState } from 'react'
 
-const  Content = () => {
-    const [ items, setItems ] = useState([{
-        id: 1,
-        checked: true,
-        item: "Almonds, Unsalted"
-    },
-    {
-        id: 2,
-        checked: false,
-        item: "Cocoa"
-    },
-    {
-        id: 3,
-        checked: false,
-        item: "Flouer"
-    }])
-
-    
+const  Content = ({ items, setItems }) => {
+       
     const handleCheck = (id) => {
-        const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
+        const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item );
         setItems(listItems);
     }
     
+    const handleDelete = (id) => {
+        const listItems = items.filter((item) => item.id !== id )
+        setItems(listItems);        
+    }
 
 
-    return (
-        <div>
-            <ul className='ul'>
-                {items.map((item) => (
-                    <li 
-                        key={item.id}>
-                            <input
-                                type="checkbox"
-                                onChange={() => handleCheck(item.id)}
-                                checked={item.checked}
-                            />
+    return (        
+        <ul className='ul'>
+            {items.map((item) => (
+                <li 
+                    key={item.id}>
+                        <input
+                            type="checkbox"
+                            checked={item.checked}
+                            onChange={() => handleCheck(item.id)}
+                        />
                         <label>{item.item}</label>
-            
-                    </li>
-                ))}
-            </ul>
-        </div>
-
+                        <button 
+                            onClick={() => handleDelete(item.id)
+                            }>Delete</button>
+                </li>
+            ))}
+        </ul>
   )
 }
 

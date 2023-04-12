@@ -1,12 +1,31 @@
 import './App.css';
 import Content from './components/ Content';
-import { TestComponent } from './components/TestComponent';
+import { useState } from 'react';
 
 function App() {
+
+  const [ items, setItems ] = useState([{
+    id: 1,
+    checked: true,
+    item: "Almonds, Unsalted"
+},
+{
+    id: 2,
+    checked: false,
+    item: "Cocoa"
+},
+{
+    id: 3,
+    checked: false,
+    item: "Flouer"
+}])
+
   return (
     <div className="App">
-       <Content />
-       <TestComponent />
+      <header></header>
+       <Content 
+       items={items} 
+       setItems={setItems} />
     </div>
   );
 }
