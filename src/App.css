@@ -28,6 +28,9 @@ body {
   
 }
 
+.header {
+  margin: 10vh 0 5vh;
+}
 
 .ul {
   list-style-type: none

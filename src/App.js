@@ -1,5 +1,6 @@
 import './App.css';
 import Content from './components/ Content';
+import Header from './components/Header';
 import { useState } from 'react';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <header></header>
+      <Header />      
        <Content 
        items={items} 
        setItems={setItems} />
