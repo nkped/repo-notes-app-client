@@ -35,3 +35,12 @@ body {
 .ul {
   list-style-type: none
 }
+
+
+.addForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+
+

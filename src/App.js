@@ -1,6 +1,7 @@
 import './App.css';
 import Content from './components/ Content';
 import Header from './components/Header';
+import AddItem from './components/AddItem';
 import { useState } from 'react';
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
     item: "Flouer"
 }])
 
-
+const [ newItem, setNewItem ] = useState('')
 
 //WORKS! -> console.log(localStorage.shoppinglist)
 const handleCheck = (id) => {
@@ -36,14 +37,31 @@ const handleDelete = (id) => {
   localStorage.setItem('shoppinglist', JSON.stringify(listItems))
 }
 
+const addItem = (item) => {
+  const id = items.length ? items[items.length - 1].id + 1 : 1
+  const myNewItem = { id, checked: false, item }
+  setItems(items + newItem)
+}
+
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+  addItem(e)
+  setNewItem('')
+}
 
 return (
   <div className="App">
-    <Header />      
+    <Header />
+    <AddItem 
+      newItem={newItem} 
+      setNewItem={setNewItem}
+      handleSubmit={handleSubmit}/>
     <Content 
       items={items}
       handleCheck={handleCheck}
       handleDelete={handleDelete}
+      handleSubmit={handleSubmit}
         />
   </div>
 );

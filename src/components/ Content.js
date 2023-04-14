@@ -1,6 +1,6 @@
 import React from 'react'
 import '../App.css'
-import { ItemList } from './ItemList'
+import ItemList from './ItemList'
 
 const  Content = ({ items, handleCheck, handleDelete }) => {      
 

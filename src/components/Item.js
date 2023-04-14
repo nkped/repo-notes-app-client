@@ -5,7 +5,7 @@ const Item = ({ item, handleCheck, handleDelete }) => {
     <li>
             <input
                 type="checkbox"
-                checked={item.checked}
+                checked={item.checked}                
                 onChange={() => handleCheck(item.id)}
             />
             <label>{item.item}</label>
